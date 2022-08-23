@@ -6,7 +6,7 @@ export default function RankPage() {
   return (
     <>
       <Header />
-      <div>RankPage</div>
+      <h1>Ranking by countries</h1>
     </>
   );
 }
