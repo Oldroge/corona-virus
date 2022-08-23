@@ -1,0 +1,45 @@
+@media screen and (max-width: 768px) {
+    #header {
+        display: flex;
+        width: 100%;
+        border-bottom: 1px solid grey;
+        box-shadow: 2px 3px 5px grey;
+    }
+
+    .header-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 3px 5px 0px 5px !important;
+        width: 100%;
+    }
+
+    .virus-image {
+        width: 20px;
+        height: 19px;
+        border-radius: 50%;
+    }
+
+    .covid19-image {
+        width: 127px;
+        height: 33px;
+    }
+
+    .nav-pages-header {
+        display: flex;
+        justify-content: space-between;
+        width: 127px;
+    }
+
+    .nav-links {
+        display: flex;
+        text-decoration: none;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 14px;
+    }
+
+    .nav-links:active {
+        box-shadow: 5px 4px 5px 1px grey;
+        border-radius: 5px;
+    }
+}
