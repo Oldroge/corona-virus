@@ -1,21 +1,21 @@
 import { GET_COVID_DATA, FAILED_REQUEST, REQUEST_DATA } from '../Actions/fetchAction';
 
 const INITIAL_STATE = {
-  covidData: {},
+  countriesList: [],
   error: '',
+  loading: false,
 };
 
-function covidDataSummary(state = INITIAL_STATE, { type, payload, error } = {}) {
+function covidDataSummary(state = INITIAL_STATE, { type, countries, error } = {}) {
   switch (type) {
     case REQUEST_DATA:
-      return { ...state };
+      return { ...state, loading: true };
     case GET_COVID_DATA:
-      return { ...state, covidData: payload };
+      return { ...state, countriesList: countries, loading: false };
     case FAILED_REQUEST:
       return { ...state, error };
     default:
       return state;
   }
 }
-
 export default covidDataSummary;
