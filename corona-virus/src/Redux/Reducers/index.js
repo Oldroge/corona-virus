@@ -1,5 +1,7 @@
 import { combineReducers } from 'redux';
 
-const RootReducers = combineReducers({});
+import covidDataSummary from './dataReducer';
+
+const RootReducers = combineReducers({ covidDataSummary });
 
 export default RootReducers;
