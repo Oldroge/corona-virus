@@ -8,7 +8,7 @@ const requestData = () => ({
 
 const getCovidData = (json) => ({
   type: GET_COVID_DATA,
-  payload: json,
+  countries: json.Countries,
 });
 
 const failedCovidRequest = (error) => ({
