@@ -16,23 +16,27 @@ function RankCoutries({ fetchSummary, covidData, loading }) {
         <Loading />
       ) : (
         <table>
-          <tr>
-            <th>Position</th>
-            <th>Country</th>
-            <th>Deaths</th>
-          </tr>
+          <thead>
+            <tr>
+              <th>Position</th>
+              <th>Country</th>
+              <th>Deaths</th>
+            </tr>
+          </thead>
           {covidData
             .sort((a, b) => b.TotalDeaths - a.TotalDeaths)
             .map((datas, index) => (
-              <tr key={datas.Country}>
-                <td>
-                  {index + 1}
-                  º
-                </td>
-                <td>{datas.Country}</td>
-                <td>{datas.TotalDeaths}</td>
-                <td>Details</td>
-              </tr>
+              <tbody key={datas.Country}>
+                <tr>
+                  <td>
+                    {index + 1}
+                    º
+                  </td>
+                  <td>{datas.Country}</td>
+                  <td>{datas.TotalDeaths}</td>
+                  <td>Details</td>
+                </tr>
+              </tbody>
             ))}
         </table>
       )}
