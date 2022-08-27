@@ -36,7 +36,9 @@ function RankCoutries({ fetchSummary, covidData, loading }) {
                   </td>
                   <td>{datas.Country}</td>
                   <td>{datas.TotalDeaths.toLocaleString('pt-BR')}</td>
-                  <td className="tbody-text-detail">Details</td>
+                  <button type="button" className="tbody-text-detail">
+                    <td>Details</td>
+                  </button>
                 </tr>
               </tbody>
             ))}
