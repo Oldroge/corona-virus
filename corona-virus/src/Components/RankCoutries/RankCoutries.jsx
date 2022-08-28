@@ -34,11 +34,13 @@ function RankCoutries({ fetchSummary, covidData, loading }) {
                     {index + 1}
                     º
                   </td>
-                  <td>{datas.Country}</td>
+                  <td className="countries-names">{datas.Country}</td>
                   <td>{datas.TotalDeaths.toLocaleString('pt-BR')}</td>
-                  <button type="button" className="tbody-text-detail">
-                    <td>Details</td>
-                  </button>
+                  <td>
+                    <button type="button" className="tbody-text-detail">
+                      Details
+                    </button>
+                  </td>
                 </tr>
               </tbody>
             ))}
