@@ -26,7 +26,6 @@ function RankCoutries({ fetchSummary, covidData, loading }) {
             </tr>
           </thead>
           {covidData
-            .sort((a, b) => b.TotalDeaths - a.TotalDeaths)
             .map((datas, index) => (
               <tbody key={datas.Country}>
                 <tr className="tbody-text">
