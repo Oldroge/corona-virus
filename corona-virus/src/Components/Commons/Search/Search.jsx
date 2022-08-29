@@ -56,6 +56,22 @@ function Search({ fetchSummary, countryData }) {
           </select>
         </label>
       ) : null}
+
+      <label htmlFor="countries">
+        <select name="countries" className="countries-desktop">
+          <option> </option>
+          {
+              countryData.map((countriesData) => (
+                <option
+                  value={countriesData.CountryCode}
+                  key={countriesData.CountryCode}
+                >
+                  {countriesData.Country}
+                </option>
+              )).sort()
+            }
+        </select>
+      </label>
     </>
   );
 }
