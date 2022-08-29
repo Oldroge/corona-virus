@@ -5,6 +5,7 @@ import './Header.css';
 
 import VirusIcon from './images/corona.png';
 import CovidIcon from './images/covid_img.png';
+import ReserchIcon from './images/research.gif';
 
 export default function Header() {
   return (
@@ -15,6 +16,13 @@ export default function Header() {
             src={VirusIcon}
             alt="White background with virus drawing painted orange"
             className="virus-image"
+          />
+        </div>
+        <div>
+          <img
+            src={ReserchIcon}
+            alt="White background with a animated magnifying glass clickable"
+            className="research-gif"
           />
         </div>
         <div>
