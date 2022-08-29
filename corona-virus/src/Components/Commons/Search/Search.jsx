@@ -28,7 +28,7 @@ function Search({ fetchSummary, countryData }) {
   };
 
   return (
-    <div>
+    <>
       {location.pathname === '/details' && clicked === false ? (
         <img
           src={ReserchIcon}
@@ -56,7 +56,27 @@ function Search({ fetchSummary, countryData }) {
           </select>
         </label>
       ) : null}
-    </div>
+
+      {
+        location.pathname === '/details' ? (
+          <label htmlFor="countries">
+            <select name="countries" className="countries-desktop">
+              <option> </option>
+              {
+                countryData.map((countriesData) => (
+                  <option
+                    value={countriesData.CountryCode}
+                    key={countriesData.CountryCode}
+                  >
+                    {countriesData.Country}
+                  </option>
+                ))
+              }
+            </select>
+          </label>
+        ) : null
+      }
+    </>
   );
 }
 
