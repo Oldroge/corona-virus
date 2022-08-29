@@ -7,10 +7,14 @@
         width: 25px;
         height: 20px;
     }
+
+    .countries-desktop {
+        display: none;
+    }
 }
 
 @media screen and (min-width: 768px) {
-    #countries {
+    .countries-desktop {
         max-width: 150px;
     }
 
