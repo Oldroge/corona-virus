@@ -2,10 +2,19 @@
     #countries {
         max-width: 25px;
     }
+
+    .research-gif {
+        width: 25px;
+        height: 20px;
+    }
 }
 
 @media screen and (min-width: 768px) {
     #countries {
         max-width: 150px;
+    }
+
+    .research-gif {
+        display: none;
     }
 }

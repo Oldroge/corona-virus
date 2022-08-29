@@ -20,11 +20,6 @@
         border-radius: 50%;
     }
 
-    .research-gif {
-        width: 25px;
-        height: 20px;
-    }
-
     .covid19-image {
         width: 127px;
         height: 33px;
@@ -76,10 +71,6 @@
         width: 20px;
         height: 19px;
         border-radius: 50%;
-    }
-
-    .research-gif {
-        display: none;
     }
 
     .covid19-image {
