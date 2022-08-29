@@ -11,14 +11,31 @@
     .countries-desktop {
         display: none;
     }
+
+    .header-icon-dropdown-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100px;
+    }
 }
 
 @media screen and (min-width: 768px) {
+    #countries {
+        display: none;
+    }
     .countries-desktop {
         max-width: 150px;
     }
 
     .research-gif {
         display: none;
+    }
+
+    .header-icon-dropdown-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 200px;
     }
 }

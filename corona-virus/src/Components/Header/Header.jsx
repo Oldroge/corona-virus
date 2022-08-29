@@ -12,14 +12,16 @@ export default function Header() {
   return (
     <header id="header">
       <div className="header-container">
-        <div>
-          <img
-            src={VirusIcon}
-            alt="White background with virus drawing painted orange"
-            className="virus-image"
-          />
+        <div className="header-icon-dropdown-container">
+          <div>
+            <img
+              src={VirusIcon}
+              alt="White background with virus drawing painted orange"
+              className="virus-image"
+            />
+          </div>
+          <Search />
         </div>
-        <Search />
         <div>
           <img
             src={CovidIcon}
