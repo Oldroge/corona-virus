@@ -1,27 +1,14 @@
-import React, { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import React from 'react';
+import { Link } from 'react-router-dom';
+
+import Search from '../Search/Search';
 
 import './Header.css';
 
 import VirusIcon from './images/corona.png';
 import CovidIcon from './images/covid_img.png';
-import ReserchIcon from './images/research.gif';
 
 export default function Header() {
-  const [clicked, setClicked] = useState(false);
-
-  const location = useLocation();
-
-  const wasClicked = (event) => {
-    if (event === 'click') {
-      setClicked(true);
-    }
-
-    if (clicked === true) {
-      setClicked(false);
-    }
-  };
-
   return (
     <header id="header">
       <div className="header-container">
@@ -32,29 +19,7 @@ export default function Header() {
             className="virus-image"
           />
         </div>
-        <div>
-          {
-            location.pathname === '/details' && clicked === false ? (
-              <img
-                src={ReserchIcon}
-                alt="White background with a animated magnifying glass clickable"
-                className="research-gif"
-                onClick={({ type }) => wasClicked(type)}
-                aria-hidden="true"
-              />
-            ) : null
-          }
-          {
-            clicked ? (
-              <label htmlFor="countries">
-                <select name="countries" id="countries">
-                  <option label=" " />
-                  <option value="br">br</option>
-                </select>
-              </label>
-            ) : null
-          }
-        </div>
+        <Search />
         <div>
           <img
             src={CovidIcon}
