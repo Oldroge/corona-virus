@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
 
-import covidDataSummary from './dataReducer';
+import covidDataSummary from './dataCovidReducer';
 
 const RootReducers = combineReducers({ covidDataSummary });
 
