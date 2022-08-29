@@ -70,7 +70,7 @@ function Search({ fetchSummary, countryData }) {
                   >
                     {countriesData.Country}
                   </option>
-                )).sort()
+                ))
               }
             </select>
           </label>
