@@ -6,7 +6,7 @@ import Loading from '../Commons/Loading/Loading';
 
 import './RankCoutries.css';
 
-import { fetchCovidSummary } from '../../Redux/Actions/fetchAction';
+import { fetchCovidSummary } from '../../Redux/Actions/fetchCovidAction';
 
 function RankCoutries({ fetchSummary, covidData, loading }) {
   useEffect(() => {

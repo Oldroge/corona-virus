@@ -4,7 +4,7 @@ import { useLocation } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 import ReserchIcon from './images/research.gif';
-import { fetchCovidSummary } from '../../../Redux/Actions/fetchAction';
+import { fetchCovidSummary } from '../../../Redux/Actions/fetchCovidAction';
 
 import './Search.css';
 

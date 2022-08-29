@@ -1,4 +1,4 @@
-import { GET_COVID_DATA, FAILED_REQUEST, REQUEST_DATA } from '../Actions/fetchAction';
+import { GET_COVID_DATA, FAILED_REQUEST, REQUEST_DATA } from '../Actions/fetchCovidAction';
 
 const INITIAL_STATE = {
   countriesList: [],
