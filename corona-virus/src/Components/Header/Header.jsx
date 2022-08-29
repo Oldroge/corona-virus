@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 import './Header.css';
 
@@ -8,6 +8,8 @@ import CovidIcon from './images/covid_img.png';
 import ReserchIcon from './images/research.gif';
 
 export default function Header() {
+  const location = useLocation();
+
   return (
     <header id="header">
       <div className="header-container">
@@ -19,11 +21,15 @@ export default function Header() {
           />
         </div>
         <div>
-          <img
-            src={ReserchIcon}
-            alt="White background with a animated magnifying glass clickable"
-            className="research-gif"
-          />
+          {
+            location.pathname === '/details' ? (
+              <img
+                src={ReserchIcon}
+                alt="White background with a animated magnifying glass clickable"
+                className="research-gif"
+              />
+            ) : null
+          }
         </div>
         <div>
           <img
