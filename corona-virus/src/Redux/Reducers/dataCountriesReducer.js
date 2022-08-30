@@ -14,7 +14,7 @@ function handleCountriesData(state = INITIAL_STATE, { type, countriesData, error
     case REQUEST_DATA:
       return { ...state };
     case GET_DATA:
-      return { ...state, countriesData };
+      return { ...state, countries: countriesData };
     case FAILED_REQUEST:
       return { ...state, error };
     default:
@@ -22,6 +22,4 @@ function handleCountriesData(state = INITIAL_STATE, { type, countriesData, error
   }
 }
 
-export default {
-  handleCountriesData,
-};
+export default handleCountriesData;
