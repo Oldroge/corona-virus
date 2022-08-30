@@ -8,7 +8,7 @@ const requestData = () => ({
 
 const getCountriesData = (countriesData) => ({
   type: GET_DATA,
-  payload: countriesData,
+  countriesData,
 });
 
 const getFailed = (error) => ({
