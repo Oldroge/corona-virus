@@ -27,8 +27,20 @@ const fetchCovidSummary = () => async (dispatch) => {
   }
 };
 
+const fetchCovidByCountry = (country) => async (dispatch) => {
+  dispatch(requestData());
+  try {
+    const response = await fetch(`https://api.covid19api.com/total/country/${country}`);
+    const json = await response.json();
+    dispatch(getCovidData(json));
+  } catch (error) {
+    dispatch(failedCovidRequest(error));
+  }
+};
+
 export {
   fetchCovidSummary,
+  fetchCovidByCountry,
   GET_COVID_DATA,
   FAILED_REQUEST,
   REQUEST_DATA,
