@@ -9,7 +9,7 @@ import './Flag.css';
 
 function Flag({ countriesData, isLoading }) {
   return (
-    <div>
+    <div className="flag-container">
       {
         isLoading ? (
           <Loading />
