@@ -65,7 +65,11 @@ function Search({ fetchSummary, countryData, fetchCountries }) {
       {
         location.pathname === '/details' ? (
           <label htmlFor="countries">
-            <select name="countries" className="countries-desktop">
+            <select
+              name="countries"
+              className="countries-desktop"
+              onChange={fetchCountries}
+            >
               <option> </option>
               {
                 countryData.map((countriesData) => (
