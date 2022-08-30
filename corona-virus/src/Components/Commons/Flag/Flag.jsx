@@ -3,15 +3,17 @@ import PropTypes from 'prop-types';
 
 import { connect } from 'react-redux';
 
-// import Loading from '../Loading/Loading';
+import Loading from '../Loading/Loading';
 
 import './Flag.css';
 
-function Flag({ countriesData }) {
+function Flag({ countriesData, isLoading }) {
   return (
     <div>
       {
-        countriesData ? (
+        isLoading ? (
+          <Loading />
+        ) : (
           <>
             <img
               src={countriesData.flag}
@@ -20,7 +22,7 @@ function Flag({ countriesData }) {
             />
             <h2 className="coutry-name-title">{countriesData.name}</h2>
           </>
-        ) : null
+        )
       }
     </div>
   );
@@ -28,9 +30,11 @@ function Flag({ countriesData }) {
 
 const mapStateToProps = (state) => ({
   countriesData: state.dataCountriesReducer.countries,
+  isLoading: state.dataCountriesReducer.loading,
 });
 
 Flag.propTypes = ({
   countriesData: PropTypes.array,
+  isLoading: PropTypes.bool,
 }).isRequired;
 export default connect(mapStateToProps)(Flag);
