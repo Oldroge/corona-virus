@@ -8,7 +8,7 @@ function Flag({ countriesData }) {
     <div>
       {
         countriesData ? (
-          <img src={countriesData.flag} alt="" />
+          <img src={countriesData.flag} alt={`flag from ${countriesData.name}`} />
         ) : null
       }
     </div>
