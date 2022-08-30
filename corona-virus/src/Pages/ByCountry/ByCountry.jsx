@@ -36,32 +36,35 @@ function ByCountry({
                 />
                 <Flag />
               </div>
-              <CounterData
-                title="Confirmed"
-                numbers={
-                  CovidDatas[CovidDatas.length - 1]
-                    ? CovidDatas[CovidDatas.length - 1].Confirmed.toLocaleString('pt-BR')
-                    : null
-                }
-              />
+              <div className="cards-datas-numbers">
+                <CounterData
+                  title="Confirmed"
+                  numbers={
+                    CovidDatas[CovidDatas.length - 1]
+                      ? CovidDatas[CovidDatas.length - 1].Confirmed.toLocaleString('pt-BR')
+                      : null
+                  }
+                />
 
-              <CounterData
-                title="Actives"
-                numbers={
-                  CovidDatas[CovidDatas.length - 1]
-                    ? CovidDatas[CovidDatas.length - 1].Active.toLocaleString('pt-BR')
-                    : null
-                }
-              />
+                <CounterData
+                  title="Actives"
+                  numbers={
+                    CovidDatas[CovidDatas.length - 1]
+                      ? CovidDatas[CovidDatas.length - 1].Active.toLocaleString('pt-BR')
+                      : null
+                  }
+                />
 
-              <CounterData
-                title="Deaths"
-                numbers={
-                  CovidDatas[CovidDatas.length - 1]
-                    ? CovidDatas[CovidDatas.length - 1].Deaths.toLocaleString('pt-BR')
-                    : null
-                }
-              />
+                <CounterData
+                  title="Deaths"
+                  numbers={
+                    CovidDatas[CovidDatas.length - 1]
+                      ? CovidDatas[CovidDatas.length - 1].Deaths.toLocaleString('pt-BR')
+                      : null
+                  }
+                />
+
+              </div>
             </>
           )
         }

@@ -11,4 +11,11 @@
         justify-content: space-around;
         margin-top: 30px !important;
     }
+
+    .cards-datas-numbers {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        height: 200px;
+    }
 }
