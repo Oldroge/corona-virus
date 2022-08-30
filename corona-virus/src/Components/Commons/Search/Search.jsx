@@ -4,11 +4,12 @@ import { useLocation } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 import ReserchIcon from './images/research.gif';
-import { fetchCovidSummary } from '../../../Redux/Actions/fetchAction';
+import { fetchCovidSummary } from '../../../Redux/Actions/fetchCovidAction';
+import { fetchCountriesData } from '../../../Redux/Actions/fetchCountriesAction';
 
 import './Search.css';
 
-function Search({ fetchSummary, countryData }) {
+function Search({ fetchSummary, countryData, fetchCountries }) {
   const [clicked, setClicked] = useState(false);
 
   const location = useLocation();
@@ -41,7 +42,11 @@ function Search({ fetchSummary, countryData }) {
 
       {clicked ? (
         <label htmlFor="countries">
-          <select name="countries" id="countries">
+          <select
+            name="countries"
+            id="countries"
+            onChange={fetchCountries}
+          >
             <option> </option>
             {
               countryData.map((countriesData) => (
@@ -82,6 +87,7 @@ function Search({ fetchSummary, countryData }) {
 
 const mapDispatchToProps = (dispatch) => ({
   fetchSummary: () => dispatch(fetchCovidSummary()),
+  fetchCountries: ({ target }) => dispatch(fetchCountriesData(target.value)),
 });
 
 const mapStateToProps = (state) => ({
@@ -90,6 +96,7 @@ const mapStateToProps = (state) => ({
 
 Search.propTypes = ({
   fetchSummary: PropTypes.func,
+  fetchCountries: PropTypes.func,
 }).isRequired;
 
 export default connect(mapStateToProps, mapDispatchToProps)(Search);
