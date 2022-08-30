@@ -1,11 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import './CounterData.css';
+
 export default function CounterData({ title, numbers }) {
   return (
-    <div>
-      <h4>{title}</h4>
-      <p>{numbers}</p>
+    <div className="container-counter-data">
+      <h4 className="title-datas">{title}</h4>
+      <p className="title-datas">{numbers}</p>
     </div>
   );
 }
