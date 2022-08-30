@@ -20,8 +20,9 @@ const fetchCountriesData = (parameter) => async (dispatch) => {
   dispatch(requestData());
 
   try {
-    const response = await fetch(`https://restcountries.com/v2/name/${parameter}`);
+    const response = await fetch(`https://restcountries.com/v2/alpha/${parameter}`);
     const json = await response.json();
+    console.log(json);
     getCountriesData(json);
   } catch (erro) {
     getFailed(erro);
