@@ -6,6 +6,7 @@ import Header from '../../Components/Header/Header';
 import Flag from '../../Components/Commons/Flag/Flag';
 import CounterData from '../../Components/Commons/CounterData/CounterData';
 import { fetchCovidByCountry } from '../../Redux/Actions/fetchCovidAction';
+import Loading from '../../Components/Commons/Loading/Loading';
 
 import './ByCountry.css';
 
@@ -24,7 +25,7 @@ function ByCountry({
       <Header />
       <section className="by-country-container">
         {
-          isLoading ? 'loading' : (
+          isLoading ? <Loading /> : (
             <>
               <div className="flag-population-container">
                 <CounterData
