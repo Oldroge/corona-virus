@@ -1,6 +1,7 @@
 @media screen and (max-width: 768px) {
     .country-flag-img {
         width: 230px;
+        border-radius: 10px;
     }
     
     .coutry-name-title {
