@@ -2,6 +2,9 @@
     .by-country-container {
         display: flex;
         flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 500px;
     }
 
     .flag-population-container {
@@ -17,6 +20,7 @@
         justify-content: space-around;
         align-items: center;
         height: 200px;
+        width: 370px;
     }
 }
 
@@ -24,6 +28,9 @@
     .by-country-container {
         display: flex;
         flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 500px;
     }
 
     .flag-population-container {
@@ -39,6 +46,7 @@
         justify-content: space-around;
         align-items: center;
         height: 200px;
+        width: 100%;
     }
     
 }
