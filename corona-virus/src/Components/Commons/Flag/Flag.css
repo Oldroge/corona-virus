@@ -24,15 +24,19 @@
     .flag-container {
         display: flex;
         flex-direction: column;
+        justify-content: space-around;
         align-items: center;
+        height: 320px;
     }
 
     .country-flag-img {
-        width: 350px;
+        width: 400px;
+        border-radius: 10px;
+        box-shadow: 2px 3px 5px black;
     }
     
     .coutry-name-title {
         font-family: Arial, Helvetica, sans-serif;
-        font-size: large;
+        font-size: xx-large;
     }
 }

@@ -15,3 +15,22 @@
         font-family: Arial, Helvetica, sans-serif;
     }
 }
+
+@media screen and (min-width: 768px) {
+    .container-counter-data {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid grey;
+        border-radius: 20px;
+        width: 190px;
+        height: 120px;
+        box-shadow: 2px 3px 5px black;
+    }
+
+    .title-datas {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: larger;
+    }
+}
