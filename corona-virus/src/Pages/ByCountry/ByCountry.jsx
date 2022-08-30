@@ -7,6 +7,8 @@ import Flag from '../../Components/Commons/Flag/Flag';
 import CounterData from '../../Components/Commons/CounterData/CounterData';
 import { fetchCovidByCountry } from '../../Redux/Actions/fetchCovidAction';
 
+import './ByCountry.css';
+
 function ByCountry({
   CovidDatas,
   CountryDatas,
@@ -20,18 +22,20 @@ function ByCountry({
   return (
     <>
       <Header />
-      <section>
+      <section className="by-country-container">
         {
           isLoading ? 'loading' : (
             <>
-              <CounterData
-                title="Population"
-                numbers={
+              <div className="flag-population-container">
+                <CounterData
+                  title="Population"
+                  numbers={
                 CountryDatas.population
                   ? CountryDatas.population.toLocaleString('pt-BR') : null
               }
-              />
-              <Flag />
+                />
+                <Flag />
+              </div>
               <CounterData
                 title="Confirmed"
                 numbers={

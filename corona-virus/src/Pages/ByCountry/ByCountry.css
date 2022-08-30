@@ -1,0 +1,14 @@
+@media screen and (max-width: 768px) {
+    .by-country-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .flag-population-container {
+        display: flex;
+        flex-direction: row-reverse;
+        width: 100%;
+        justify-content: space-around;
+        margin-top: 30px !important;
+    }
+}
