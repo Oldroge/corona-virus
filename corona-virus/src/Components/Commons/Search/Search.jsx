@@ -70,7 +70,7 @@ function Search({ fetchSummary, countryData, fetchCountries }) {
               className="countries-desktop"
               onChange={fetchCountries}
             >
-              <option> </option>
+              <option value="" disabled selected>Select country...</option>
               {
                 countryData.map((countriesData) => (
                   <option
