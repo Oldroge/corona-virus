@@ -18,9 +18,6 @@ function Search({
   const [clicked, setClicked] = useState(false);
   const [countryCode, setCountryCode] = useState('');
 
-  // const navigate = useNavigate();
-  console.log(country);
-
   useEffect(() => {
     fetchSummary();
     fetchCountries(countryCode);
@@ -64,7 +61,7 @@ function Search({
                 >
                   {countriesData.Country}
                 </option>
-              )).sort()
+              ))
             }
           </select>
         </label>
