@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useParams } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 import ReserchIcon from './images/research.gif';
@@ -9,14 +9,22 @@ import { fetchCountriesData } from '../../../Redux/Actions/fetchCountriesAction'
 
 import './Search.css';
 
-function Search({ fetchSummary, countryData, fetchCountries }) {
-  const [clicked, setClicked] = useState(false);
-
+function Search({
+  fetchSummary, fetchCountries, datasCovid,
+}) {
   const location = useLocation();
+  const { country } = useParams();
+
+  const [clicked, setClicked] = useState(false);
+  const [countryCode, setCountryCode] = useState('');
+
+  // const navigate = useNavigate();
+  console.log(country);
 
   useEffect(() => {
     fetchSummary();
-  }, []);
+    fetchCountries(countryCode);
+  }, [countryCode]);
 
   const wasClicked = (event) => {
     if (event === 'click') {
@@ -30,7 +38,7 @@ function Search({ fetchSummary, countryData, fetchCountries }) {
 
   return (
     <>
-      {location.pathname === '/details' && clicked === false ? (
+      {location.pathname === `/details/${country}` && clicked === false ? (
         <img
           src={ReserchIcon}
           alt="White background with a animated magnifying glass clickable"
@@ -45,11 +53,11 @@ function Search({ fetchSummary, countryData, fetchCountries }) {
           <select
             name="countries"
             id="countries"
-            onChange={fetchCountries}
+            onChange={({ target }) => setCountryCode(target.value)}
           >
             <option> </option>
             {
-              countryData.map((countriesData) => (
+              datasCovid.map((countriesData) => (
                 <option
                   value={countriesData.CountryCode}
                   key={countriesData.CountryCode}
@@ -63,23 +71,23 @@ function Search({ fetchSummary, countryData, fetchCountries }) {
       ) : null}
 
       {
-        location.pathname === '/details' ? (
+        location.pathname === `/details/${country}` ? (
           <label htmlFor="countries">
             <select
               name="countries"
               className="countries-desktop"
-              onChange={fetchCountries}
+              onChange={({ target }) => setCountryCode(target.value)}
             >
-              <option value="" disabled selected>Select country...</option>
+              <option value="" disabled defaultValue="Select country...">Select country...</option>
               {
-                countryData.map((countriesData) => (
-                  <option
-                    value={countriesData.CountryCode}
-                    key={countriesData.CountryCode}
-                  >
-                    {countriesData.Country}
-                  </option>
-                ))
+                  datasCovid.map((countriesData) => (
+                    <option
+                      value={countriesData.CountryCode}
+                      key={countriesData.CountryCode}
+                    >
+                      {countriesData.Country}
+                    </option>
+                  ))
               }
             </select>
           </label>
@@ -91,7 +99,7 @@ function Search({ fetchSummary, countryData, fetchCountries }) {
 
 const mapDispatchToProps = (dispatch) => ({
   fetchSummary: () => dispatch(fetchCovidSummary()),
-  fetchCountries: ({ target }) => dispatch(fetchCountriesData(target.value)),
+  fetchCountries: (countryCode) => dispatch(fetchCountriesData(countryCode)),
 });
 
 const mapStateToProps = (state) => ({
