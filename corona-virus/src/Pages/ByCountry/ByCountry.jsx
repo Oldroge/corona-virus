@@ -15,14 +15,16 @@ function ByCountry({
   CountryDatas,
   isLoading,
   fetchByCountry,
+  datasCovid,
 }) {
+  // console.log(datasCovid);
   useEffect(() => {
     fetchByCountry(CountryDatas.alpha2Code);
   }, [CountryDatas]);
 
   return (
     <>
-      <Header />
+      <Header datasCovid={datasCovid} />
       <section className="by-country-container">
         {
           isLoading ? <Loading /> : (

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { useLocation, useParams } from 'react-router-dom';
+import { useLocation, useParams, useNavigate } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 import ReserchIcon from './images/research.gif';
@@ -14,9 +14,15 @@ function Search({
 }) {
   const location = useLocation();
   const { country } = useParams();
+  const navigate = useNavigate();
 
   const [clicked, setClicked] = useState(false);
-  const [countryCode, setCountryCode] = useState('');
+  const [countryCode, setCountryCode] = useState(country);
+
+  const handleNavigate = (countryId) => {
+    setCountryCode(countryId);
+    navigate(`/details/${countryId}`);
+  };
 
   useEffect(() => {
     fetchSummary();
@@ -50,7 +56,7 @@ function Search({
           <select
             name="countries"
             id="countries"
-            onChange={({ target }) => setCountryCode(target.value)}
+            onChange={({ target }) => handleNavigate(target.value)}
           >
             <option> </option>
             {
@@ -73,7 +79,7 @@ function Search({
             <select
               name="countries"
               className="countries-desktop"
-              onChange={({ target }) => setCountryCode(target.value)}
+              onChange={({ target }) => handleNavigate(target.value)}
             >
               <option value="" disabled defaultValue="Select country...">Select country...</option>
               {
@@ -82,7 +88,7 @@ function Search({
                       value={countriesData.CountryCode}
                       key={countriesData.CountryCode}
                     >
-                      {countriesData.Country}
+                      { countriesData.Country }
                     </option>
                   ))
               }
