@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
@@ -9,6 +10,7 @@ import './RankCoutries.css';
 import { fetchCovidSummary } from '../../Redux/Actions/fetchCovidAction';
 
 function RankCoutries({ fetchSummary, covidData, loading }) {
+  const navigate = useNavigate();
   useEffect(() => {
     fetchSummary();
   }, []);
@@ -36,7 +38,11 @@ function RankCoutries({ fetchSummary, covidData, loading }) {
                   <td className="countries-names">{datas.Country}</td>
                   <td>{datas.TotalDeaths.toLocaleString('pt-BR')}</td>
                   <td>
-                    <button type="button" className="tbody-text-detail">
+                    <button
+                      type="button"
+                      className="tbody-text-detail"
+                      onClick={() => navigate(`/details/${datas.CountryCode}`)}
+                    >
                       Details
                     </button>
                   </td>
