@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 import Search from '../Commons/Search/Search';
@@ -8,7 +10,7 @@ import './Header.css';
 import VirusIcon from './images/corona.png';
 import CovidIcon from './images/covid_img.png';
 
-export default function Header() {
+function Header({ datasCovid }) {
   return (
     <header id="header">
       <div className="header-container">
@@ -20,7 +22,7 @@ export default function Header() {
               className="virus-image"
             />
           </div>
-          <Search />
+          <Search datasCovid={datasCovid} />
         </div>
         <div>
           <img
@@ -37,7 +39,7 @@ export default function Header() {
               </Link>
             </li>
             <li className="nav-links">
-              <Link to="/details" className="nav-links">
+              <Link to="/details/US" className="nav-links">
                 By Country
               </Link>
             </li>
@@ -47,3 +49,13 @@ export default function Header() {
     </header>
   );
 }
+
+const mapStateToProps = (state) => ({
+  datasCovid: state.covidDataSummary.countriesList,
+});
+
+Header.propTypes = ({
+  datasCovid: PropTypes.object,
+}).isRequred;
+
+export default connect(mapStateToProps)(Header);
