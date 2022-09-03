@@ -18,6 +18,9 @@ const getFailed = (error) => ({
 
 const fetchCountriesData = (parameter) => async (dispatch) => {
   dispatch(requestData());
+  if (parameter === undefined) {
+    return;
+  }
 
   try {
     const response = await fetch(`https://restcountries.com/v2/alpha/${parameter}`);
