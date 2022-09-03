@@ -18,6 +18,7 @@ const getFailed = (error) => ({
 
 const fetchCountriesData = (parameter) => async (dispatch) => {
   dispatch(requestData());
+
   if (parameter === undefined) {
     return;
   }
