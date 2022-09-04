@@ -14,11 +14,19 @@ export default function Footer() {
         </div>
         <div className="images-container">
           <a href="https://github.com/Oldroge" target="_blank" rel="noreferrer">
-            <img src={github} alt="" className="social-media-images" />
+            <img
+              src={github}
+              alt="github logo"
+              className="social-media-images"
+            />
           </a>
 
           <a href="https://www.linkedin.com/in/roge/" target="_blank" rel="noreferrer">
-            <img src={linkedin} alt="" className="social-media-images" />
+            <img
+              src={linkedin}
+              alt="linkedin logo"
+              className="social-media-images"
+            />
           </a>
         </div>
         <div className="text-made-with">
