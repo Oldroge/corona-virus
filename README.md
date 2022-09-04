@@ -1,5 +1,5 @@
 # Corona-virus
-Corona virus project initially is a project that ranking countries by deaths since coronavirus day one into these days. Also is possible se details about each country such as: Population, confirmed cases, active cases.
+Corona virus project initially is a project that ranking countries by deaths since coronavirus day one into these days. Also is possible see details about each country such as: Population, confirmed cases, active cases.
 
 ### Browser view
 ![image](https://i.imgur.com/U3IcPR2.jpeg) &emsp; ![image](https://i.imgur.com/LzV7LeA.jpeg)
