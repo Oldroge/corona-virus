@@ -47,6 +47,11 @@ const failedCovidRequestByCountry = (error) => ({
 
 const fetchCovidByCountry = (country) => async (dispatch) => {
   dispatch(requestDataByCountry());
+
+  if (country === undefined) {
+    return;
+  }
+
   try {
     const response = await fetch(`https://api.covid19api.com/total/country/${country}`);
     const json = await response.json();

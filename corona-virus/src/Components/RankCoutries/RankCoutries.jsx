@@ -11,9 +11,11 @@ import { fetchCovidSummary } from '../../Redux/Actions/fetchCovidAction';
 
 function RankCoutries({ fetchSummary, covidData, loading }) {
   const navigate = useNavigate();
+
   useEffect(() => {
     fetchSummary();
   }, []);
+
   return (
     <section id="rank-countries-container">
       {loading ? (

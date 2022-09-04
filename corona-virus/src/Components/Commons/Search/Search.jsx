@@ -81,7 +81,7 @@ function Search({
               className="countries-desktop"
               onChange={({ target }) => handleNavigate(target.value)}
             >
-              <option value="" disabled defaultValue="Select country...">Select country...</option>
+              <option disabled defaultValue="Select country...">Select country...</option>
               {
                   datasCovid.map((countriesData) => (
                     <option
