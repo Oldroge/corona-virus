@@ -23,16 +23,16 @@ Corona virus project initially is a project that ranking countries by deaths sin
 You can access the project through this [link](https://inquisitive-bubblegum-8108a4.netlify.app)
 
 Whether wish execute locally:
-- Clone project:
+- Clone project: <br />
 `git clone git@github.com:Oldroge/corona-virus.git`
 
-- Enter the folder you just already cloned:
+- Enter the folder you just already cloned: <br />
 `cd corona-virus`
 
-- Install dependeces:
+- Install dependecies: <br />
 `npm install`
 
-- Start project:
+- Start project: <br />
 `npm start`
 
 Any tips, comments or help I'll enjoy!
