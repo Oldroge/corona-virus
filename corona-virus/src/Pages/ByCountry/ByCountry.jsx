@@ -7,6 +7,7 @@ import Flag from '../../Components/Commons/Flag/Flag';
 import CounterData from '../../Components/Commons/CounterData/CounterData';
 import { fetchCovidByCountry } from '../../Redux/Actions/fetchCovidAction';
 import Loading from '../../Components/Commons/Loading/Loading';
+import Footer from '../../Components/Footer/Footer';
 
 import './ByCountry.css';
 
@@ -17,7 +18,6 @@ function ByCountry({
   fetchByCountry,
   datasCovid,
 }) {
-  // console.log(datasCovid);
   useEffect(() => {
     fetchByCountry(CountryDatas.alpha2Code);
   }, [CountryDatas]);
@@ -72,6 +72,7 @@ function ByCountry({
           )
         }
       </section>
+      <Footer />
     </>
   );
 }
