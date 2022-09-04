@@ -2,12 +2,10 @@
 Corona virus project initially is a project that ranking countries by deaths since coronavirus day one into these days. Also is possible se details about each country such as: Population, confirmed cases, active cases.
 
 ### Browser view
-![image](file:///corona-virus/images/home-covid-desktop.jpg)
-![image](file:///corona-virus/images/by-country-desktop.jpg)
+![image](https://i.imgur.com/U3IcPR2.jpeg) &emsp; ![image](https://i.imgur.com/LzV7LeA.jpeg)
 
 ### Mobile view
-![image](file:///corona-virus/images/home-covid-mobile.jpg)
-![image](file:///corona-virus/images/by-country-mobile.jpg)
+![image](https://i.imgur.com/SvadQy7.jpeg) &emsp; ![image](https://i.imgur.com/71DleIK.jpeg)
 
 ### API's
 - [Covid API](https://documenter.getpostman.com/view/10808728/SzS8rjbc#intro)
