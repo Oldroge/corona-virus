@@ -1,6 +1,6 @@
 {
-  "name": "pokemons",
-  "version": "0.1.0",
+  "name": "corona-virus",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
     "@redux-devtools/extension": "^3.2.3",
