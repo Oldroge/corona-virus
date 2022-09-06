@@ -30,7 +30,7 @@ export default function Footer() {
           </a>
         </div>
         <div className="text-made-with">
-          <p>Feito com ReactJS, Redux e CSS</p>
+          <p>Done with ReactJS, Redux e CSS</p>
         </div>
       </div>
     </footer>
